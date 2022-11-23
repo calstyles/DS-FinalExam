@@ -10,11 +10,12 @@ public class Graph {
 		this.edgeList = edgeList;
 	}
 	
-	public void initializeSingleSource() {
+	public void initializeSingleSource(int s) {
 		for(Node v : nodeList) {
+			v.setD(Integer.MAX_VALUE);
 			v.setP(null);
 		}
-		
+		nodeList.get(s).setD(0);
 	}
 	
 	public void relax() {
