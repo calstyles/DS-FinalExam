@@ -1,6 +1,6 @@
 import java.util.LinkedList;
 
-public class Node {
+public class Node implements Comparable<Node>{
 
 	private Integer id;
 	private String name;
@@ -8,9 +8,9 @@ public class Node {
 	private Node p;
 	public LinkedList<Edge> adjList;
 	
-	public Node(String name) {
-		id = 0;
-		this.name = name;
+	public Node(Integer id) {
+		name = null;
+		this.id = id;
 		d = 0;
 		p = null;
 	}
@@ -38,6 +38,16 @@ public class Node {
 	}
 	public void setP(Node p) {
 		this.p = p;
+	}
+
+	@Override
+	public int compareTo(Node o) {
+		if (this.id == o.id) {
+			return 0;
+		} else if (this.id > o.id) {
+			return 1;
+		}
+		return -1;
 	}
 	
 }

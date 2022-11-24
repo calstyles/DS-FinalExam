@@ -8,13 +8,13 @@ public class Edge {
 	public Node source;
 	public Node target;
 	
-	public Edge() {
+	public Edge(Node source, Node target) {
 		lanes = 0;
 		speed = 0;
 		congestion = 0;
 		length = 0;
-		source = null;
-		target = null;
+		this.source = source;
+		this.target = target;
 	}
 	
 	public double getWeight(boolean isRushHour) {
@@ -25,9 +25,10 @@ public class Edge {
 		}
 	}
 	
-	@Override
-	public String toString() {
-		return "";
+	public String toString(boolean isRushHour) {
+		return " Start: " + source + 
+				"\n End:" + target + 
+				"\n Weight: " + getWeight(isRushHour);
 	}
 	
 }
