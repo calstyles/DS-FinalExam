@@ -1,4 +1,4 @@
-import java.util.LinkedList;
+//import java.util.LinkedList;
 
 public class Node implements Comparable<Node>{
 
@@ -6,10 +6,10 @@ public class Node implements Comparable<Node>{
 	private String name;
 	private float d;
 	private Node p;
-	public LinkedList<Edge> adjList;
+//	public LinkedList<Edge> adjList;
 	
-	public Node(Integer id) {
-		name = null;
+	public Node(String name, Integer id) {
+		this.name = name;
 		this.id = id;
 		d = 0;
 		p = null;
@@ -40,11 +40,17 @@ public class Node implements Comparable<Node>{
 		this.p = p;
 	}
 
+	public String toString() {
+		return "Name: " + name + "\n " + 
+			   "Distance: " + d + "\n " +
+			   "Parent: " + p + "\n ";
+	}
+	
 	@Override
 	public int compareTo(Node o) {
-		if (this.id == o.id) {
+		if (this.d == o.d) {
 			return 0;
-		} else if (this.id > o.id) {
+		} else if (this.d > o.d) {
 			return 1;
 		}
 		return -1;
