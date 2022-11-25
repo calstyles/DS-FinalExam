@@ -47,16 +47,13 @@ public class Graph {
 	
 	public void printEdges(boolean isRushHour) {
 		for(int i = 0; i < edgeList.size(); i++) {
-			System.out.println("Source of " + i + ": " + edgeList.get(i).getSource());
-			System.out.println("Target of " + i + ": " + edgeList.get(i).getTarget());
-			System.out.println("Weight of " + i + ": " + edgeList.get(i).getWeight(isRushHour));
+			System.out.println(edgeList.get(i).toString(isRushHour));
 		}
 	}
 	
 	public void printNodes() {
 		for(int i = 0; i < nodeList.size(); i++) {
-			System.out.println("Name of node " + i + ": " + nodeList.get(i).getName());
-			System.out.println("Distance of node " + i + ": " + nodeList.get(i).getD());
+			System.out.println(nodeList.get(i).toString());
 		}
 	}
 }

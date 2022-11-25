@@ -10,7 +10,16 @@ public class Tester {
 		Node n4 = new Node("sav", 90);
 		
 		Edge e1 = new Edge(n1, n2);
+		e1.setLanes(54);
+		e1.setSpeed(43);
+		e1.setCongestion(3.3f);
+		e1.setLength(43);
+		
 		Edge e2 = new Edge(n3, n4);
+		e1.setLanes(103);
+		e1.setSpeed(21);
+		e1.setCongestion(3.5f);
+		e1.setLength(74);
 		
 		List<Node> nodeList = new ArrayList<Node>();
 		nodeList.add(n1);
@@ -24,7 +33,10 @@ public class Tester {
 		
 		Graph g = new Graph(nodeList, edgeList);
 		boolean isRushHour = true;
-		g.doDijkstra(n1, isRushHour);
+//		g.doDijkstra(n1, isRushHour);
+		g.doDijkstra(n2, isRushHour);
+//		g.doDijkstra(n3, isRushHour);
+//		g.doDijkstra(n4, isRushHour);
 		g.printEdges(isRushHour);
 		g.printNodes();
 		

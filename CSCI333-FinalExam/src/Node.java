@@ -41,9 +41,9 @@ public class Node implements Comparable<Node>{
 	}
 
 	public String toString() {
-		return "Name: " + name + "\n " + 
-			   "Distance: " + d + "\n " +
-			   "Parent: " + p + "\n ";
+		return " Node Name: " + name + "\n " + 
+			   "Node Distance: " + d + "\n " +
+			   "Node Parent: " + p + "\n ";
 	}
 	
 	@Override

@@ -19,10 +19,44 @@ public class Edge {
 	
 	public double getWeight(boolean isRushHour) {
 		if(isRushHour) {
+//			System.out.println(length * congestion);
+//			System.out.println(speed * lanes);
 			return ((double) length * congestion)/((double) speed * lanes);
 		}else {
 			return (double) length/((double) speed * lanes);
 		}
+	}
+	
+	public Integer getLanes() {
+		return lanes;
+	}
+	
+	public void setLanes(Integer lanes) {
+		this.lanes = lanes;
+	}
+	
+	public Integer getSpeed() {
+		return speed;
+	}
+	
+	public void setSpeed(Integer speed) {
+		this.speed = speed;
+	}
+	
+	public float getCongestion() {
+		return congestion;
+	}
+	
+	public void setCongestion(float congestion) {
+		this.congestion = congestion;
+	}
+	
+	public Integer getLength() {
+		return length;
+	}
+	
+	public void setLength(Integer length) {
+		this.length = length;
 	}
 	
 	public Node getSource() {
@@ -42,9 +76,10 @@ public class Edge {
 	}
 	
 	public String toString(boolean isRushHour) {
-		return " Start: " + source + 
-				"\n End:" + target + 
-				"\n Weight: " + getWeight(isRushHour);
+		return " Edge Start: " + source.getName() + 
+				"\n Edge End: " + target.getName() + 
+				"\n Edge Weight: " + getWeight(isRushHour) + 
+				"\n";
 	}
 	
 }
