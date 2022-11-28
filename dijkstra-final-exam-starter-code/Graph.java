@@ -31,8 +31,9 @@ public class Graph {
 		if(u.d == Integer.MAX_VALUE) {
 			return;
 		}
-		if(v.d > (u.d + w)) {
-			v.d = (float) (u.d + w);
+		Edge edge = v.getBackEdge(u);
+		if(v.d > (u.d + edge.getWeight(isRushHour))) {
+			v.d = (float) (u.d + edge.getWeight(isRushHour));
 			v.p = u;
 		}
 	}
