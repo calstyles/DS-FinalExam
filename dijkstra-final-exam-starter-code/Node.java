@@ -26,7 +26,7 @@ public class Node implements Comparable<Node>{
 		Edge newEdge = null;
 		for(Edge e : adjList) {
 			if(e.target.equals(node)) {
-				e = newEdge;;
+				e = newEdge;
 			}
 		}
 		return newEdge;

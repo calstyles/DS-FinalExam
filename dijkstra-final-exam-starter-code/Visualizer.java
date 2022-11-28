@@ -48,9 +48,9 @@ public class Visualizer {
 			jsonNode.put("position", position);
 			jsonNodes.add(jsonNode);
 			if (node.p != null) {
-				System.out.println(node);
-				System.out.println(node.p);
-				System.out.println(node.p.getBackEdge(node));
+//				System.out.println(node);
+//				System.out.println(node.p);
+//				System.out.println(node.p.getBackEdge(node));
 				JSONObject jsonEdge = node.p.getBackEdge(node).toJSON(true);
 				jsonEdges.add(jsonEdge);
 			}
